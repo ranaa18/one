@@ -25,6 +25,9 @@ body{
     color: #eee;
     text-decoration: none;
 }
+.navbar li a.active{
+    color: blueviolet;
+}
 /*end header*/
 
 .block{
