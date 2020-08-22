@@ -23,11 +23,23 @@ $(function (){
 
         $('html, body').animate({
 
-            scrollTop: $('#' + $(this).data('scroll')).offset().top
+            scrollTop: $('#' + $(this).data('scroll')).offset().top+1
         }, 1000);
 
     });
     
-    
-    
+    //cync navbar links with sections
+
+    $(window).scroll(function(){
+        $('.block').each(function () {
+
+            if($(window).scrollTop() > $(this).offset().top){
+               
+                var blockID = $(this).attr('id');
+
+                $('.navbar a').removeClass('active');
+
+                $('.navbar li a[data-scroll="'+ blockID +'"]').addClass('active');            }
+        });
+    });
 });
